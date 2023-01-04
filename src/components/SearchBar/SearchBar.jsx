@@ -1,5 +1,6 @@
-import { useState } from "react";
+import PropTypes from 'prop-types';
 import Notiflix from 'notiflix';
+import { useState } from "react";
 import { Form, Input, Button } from './SearchBar.styled';
 import {BsSearch} from 'react-icons/bs'
 
@@ -33,5 +34,10 @@ const SearchBar = ({ value, onChange }) => {
     </Button>
   </Form>
     )
+}
+
+SearchBar.propTypes = {
+    value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
 }
 export default SearchBar;

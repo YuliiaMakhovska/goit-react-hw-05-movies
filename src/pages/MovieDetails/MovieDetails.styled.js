@@ -12,3 +12,15 @@ export const BackLink = styled(Link)`
 export const Section = styled.div`
   margin: 0 auto;
 `;
+export const LinkWrap = styled.ul`
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 50px;
+  font-size: 22px;
+  font-weight: 700;
+  padding: 10px 20px;
+`;
+export const LinkRev = styled(Link)``;
+
+export const LinkCast = styled(Link)``;

@@ -3,6 +3,7 @@ import { getTrending } from "services/Api";
 import { HomeTitle } from './Home.styled';
 import MoviesList from "components/MoviesList/MoviesList";
 import Notiflix from 'notiflix';
+import Loader from "components/Loader/Loader";
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
@@ -43,6 +44,7 @@ const Home = () => {
                         {movies.length > 0 && !isLoading && <MoviesList movies={movies} />}
                     </>)}
             </section>
+            {isLoading && <Loader />}
         </main>
     )
 }

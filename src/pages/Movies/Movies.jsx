@@ -1,11 +1,12 @@
 import Notiflix from 'notiflix';
 import MoviesList from 'components/MoviesList/MoviesList';
 import SearchBar from 'components/SearchBar/SearchBar';
+import Loader from 'components/Loader/Loader';
+import Reviews from 'components/Reviews/Reviews';
 import { searchMovies } from "services/Api";
 import { useState, useEffect } from "react";
 import { Outlet, useSearchParams } from "react-router-dom";
-import Loader from 'components/Loader/Loader';
-import Reviews from 'components/Reviews/Reviews';
+
 
 
 
