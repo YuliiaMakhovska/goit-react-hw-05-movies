@@ -1,6 +1,5 @@
 import Loader from "components/Loader/Loader";
 import Notiflix from 'notiflix';
-import PropTypes from 'prop-types';
 import { useParams } from "react-router-dom";
 import { getReviews } from "services/Api";
 import { useState, useEffect } from "react";
@@ -32,7 +31,7 @@ const Reviews = () => {
     return (
         <>
             <ReviewsContainer>
-            {isLoading && reviews.length > 0 && (
+            {!isLoading && reviews.length > 0 && (
                 <List>
                     {reviews.map(({ id, content, author }) => (
               <Item key={id}>
@@ -48,13 +47,4 @@ const Reviews = () => {
     )
 }
 
-Reviews.propTypes = {
-    reviews: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            content: PropTypes.string.isRequired,
-            author: PropTypes.string.isRequired
-})
-    )
-}
 export default Reviews;

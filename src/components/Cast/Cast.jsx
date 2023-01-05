@@ -1,10 +1,10 @@
 import Loader from "components/Loader/Loader";
-import PropTypes from 'prop-types';
 import Notiflix from 'notiflix';
 import { useParams } from "react-router-dom";
 import { getCredits } from "services/Api";
 import { useState, useEffect } from 'react';
 import { CastContainer, CastList, Item, Img, Name } from "./Cast.styled";
+
 
 const Cast = () => {
     const { movieId } = useParams();
@@ -30,7 +30,7 @@ const Cast = () => {
     }
     return (
         <CastContainer>
-            {isLoading && cast.length > 0 && (<CastList>
+            {!isLoading && cast.length > 0 && (<CastList>
                 {cast.map(({ id, original_name, profile_path }) => (
                 <Item key={id}>
                 <Img src={
@@ -46,16 +46,8 @@ const Cast = () => {
             </CastList>)}
             {isLoading && <Loader />}
         </CastContainer>
+
     )
 }
 
-Cast.propTypes = {
-  cast: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      original_name: PropTypes.string.isRequired,
-      profile_path: PropTypes.string,
-    })
-  ),
-};
 export default Cast;
