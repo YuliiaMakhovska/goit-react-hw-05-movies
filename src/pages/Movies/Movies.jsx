@@ -1,6 +1,7 @@
 import Notiflix from 'notiflix';
 import MoviesList from 'components/MoviesList/MoviesList';
 import SearchBar from 'components/SearchBar/SearchBar';
+import { ContainerMovies } from './Movies.styled';
 import Loader from 'components/Loader/Loader';
 import Reviews from 'components/Reviews/Reviews';
 import { searchMovies } from "services/Api";
@@ -44,12 +45,12 @@ const Movies = () => {
  
     return (
         <main>
-            <section>
+            <ContainerMovies>
         <SearchBar value={movie} onChange ={updateQueryString} />
                 {movies.length > 0 && !isLoading && <MoviesList movies={movies} />}
-                <Reviews />
+                {movies.length > 0 && <Reviews />}
         {isLoading && <Loader />}
-            </section>
+            </ContainerMovies>
             <Outlet />
         </main>
     )

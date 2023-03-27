@@ -11,7 +11,7 @@ const Reviews = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        setIsLoading(true)
+        setIsLoading(false)
         const getMoviesReviews = async () => {
             try {
                 const response = await getReviews(movieId);

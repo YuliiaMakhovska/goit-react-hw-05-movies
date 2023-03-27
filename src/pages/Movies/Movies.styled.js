@@ -7,3 +7,6 @@ export const MoviesList = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px 15px;
 `;
+export const ContainerMovies = styled.section`
+  height: 100vh;
+`;
